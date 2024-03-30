@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+  .logo {
+    @apply w-24 h-auto;
+  }
+
+  .nav-style {
+    @apply flex items-center justify-between flex-wrap p-2 bg-rose-600 text-black;
+  }
+}
