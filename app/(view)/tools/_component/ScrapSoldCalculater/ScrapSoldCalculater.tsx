@@ -5,7 +5,7 @@ interface props {
   quotaAmount2: number;
 }
 
-export default function ScrapSoldCalculater(props) {
+export default function ScrapSoldCalculater() {
   const [targetMoney, setTargetMoney] = useState<number>();
   const [quotaAmount, setQuotaAmount] = useState<number>();
 
