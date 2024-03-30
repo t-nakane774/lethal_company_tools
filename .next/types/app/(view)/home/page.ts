@@ -1,4 +1,4 @@
-// File: /Users/nakane/Programs/lethal_company_tools/app/(view)/home/page.tsx
+// File: /Users/nakane/Programs/sub/lethal_company_tools/app/(view)/home/page.tsx
 import * as entry from '../../../../../app/(view)/home/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
