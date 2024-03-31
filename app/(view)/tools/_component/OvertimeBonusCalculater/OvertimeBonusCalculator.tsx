@@ -4,7 +4,7 @@ export default function OvertimeBonusCalculator() {
 
   const [overtimeBonus, setOvertimeBonus] = useState<number>();
   const [scrapSold, setScrapSold] = useState<number>();
-  const [quotaAmount, setQuotaAmount] = useState<number>();
+  const [quotaAmount, setQuotaAmount] = useState<number>(130);
 
   const renderAbout = () => {
     return (
