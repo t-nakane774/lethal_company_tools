@@ -33,7 +33,6 @@ export default function OvertimeBonusCalculator() {
           placeholder="Input Scrap Sold"
           onChange={(event) =>
             setScrapSold(Number(event.target.value))
-
           }
         />
       </div>
@@ -41,9 +40,10 @@ export default function OvertimeBonusCalculator() {
         <div style={{ fontSize: 12 }}>Quota Amount</div>
         <input
           type='number'
-          id="scrap-sold"
+          id="quota-amount"
           className="input-box"
           placeholder="Input Quota Amount"
+          defaultValue={quotaAmount}
           onChange={(event) =>
             setQuotaAmount(Number(event.target.value))
           }

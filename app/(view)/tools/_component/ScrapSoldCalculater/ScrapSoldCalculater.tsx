@@ -36,9 +36,10 @@ export default function ScrapSoldCalculater() {
         <div style={{ fontSize: 12 }}>Target Money</div>
         <input
           type='number'
-          id="scrap-sold"
+          id="target-money"
           className="input-box"
           placeholder="Input Target Money"
+          defaultValue={targetMoney}
           onChange={(event) =>
             setTargetMoney(Number(event.target.value))
 
@@ -49,9 +50,10 @@ export default function ScrapSoldCalculater() {
         <div style={{ fontSize: 12 }}>Quota Amount</div>
         <input
           type='number'
-          id="scrap-sold"
+          id="quota-amount"
           className="input-box"
           placeholder="Input Quota Amount"
+          defaultValue={quotaAmount}
           onChange={(event) =>
             setQuotaAmount(Number(event.target.value))
           }
