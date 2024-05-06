@@ -14,11 +14,18 @@ export default function OvertimeBonusCalculator() {
     );
   }
 
+  //小数点以下切り捨て
   const calculateOvertimeBonus = () => {
-    if (!scrapSold) return;
-    if (!quotaAmount) return;
+    if (!scrapSold) return 0;
+    if (!quotaAmount) return 0;
 
-    return (scrapSold - quotaAmount) / 5 - 15;
+    return Math.floor((scrapSold - quotaAmount) / 5 - 15);
+  }
+
+  const calculateTotal = () => {
+    if (!scrapSold) return;
+
+    return scrapSold + calculateOvertimeBonus();
   }
 
   return (
@@ -51,6 +58,7 @@ export default function OvertimeBonusCalculator() {
       </div>
       <div>
         Overtime Bonus: {calculateOvertimeBonus()}
+        Bonus + Scrap: {calculateTotal()}
       </div>
     </view>
   );
