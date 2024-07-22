@@ -204,6 +204,7 @@ export default function ScrapSoldCalculater() {
               {renderEquipmentTableRow("Jetpack")}
               {renderEquipmentTableRow("Extension_ladder")}
               {renderEquipmentTableRow("Radar-booster")}
+              {renderEquipmentTableRow("Cruiser")}
             </table>
           </div>
           <div>

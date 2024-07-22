@@ -1,5 +1,5 @@
 export type Equipment = "Boombox" | "Extension_ladder" | "Flashlight" | "Jetpack" | "Lockpicker" | "Pro-flashlight" | "Radar-booster"
-                  | "Shovel" | "Spray_paint" | "Stun_grenade" | "TZP-Inhalant" | "Walkie-talkie" | "Zap_gun";
+  | "Shovel" | "Spray_paint" | "Stun_grenade" | "TZP-Inhalant" | "Walkie-talkie" | "Zap_gun" | "Cruiser";
 
 export type Upgrade = "Teleporter" | "Inverse_Teleporter" | "Loud_horn" | "Signal_translator";
 
@@ -13,7 +13,7 @@ export const merchandicePrice = (name: Equipment | Upgrade) => {
     case "Flashlight":
       return 15;
     case "Jetpack":
-      return 700;
+      return 900;
     case "Lockpicker":
       return 20;
     case "Pro-flashlight":
@@ -32,6 +32,8 @@ export const merchandicePrice = (name: Equipment | Upgrade) => {
       return 12;
     case "Zap_gun":
       return 400;
+    case "Cruiser":
+      return 400;
 
     //Upgrade
     case "Teleporter":
@@ -42,7 +44,7 @@ export const merchandicePrice = (name: Equipment | Upgrade) => {
       return 100;
     case "Signal_translator":
       return 255;
-    
+
     default:
       return 0;
   }
