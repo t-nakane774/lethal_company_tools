@@ -2,11 +2,10 @@
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import './styles/tools.css';
 import 'react-tabs/style/react-tabs.css';
-import OvertimeBonusCalculator from './_component/OvertimeBonusCalculater/OvertimeBonusCalculator';
-import { useState } from 'react';
-import ScrapSoldCalculater from './_component/ScrapSoldCalculater/ScrapSoldCalculater';
+import { OvertimeBonusCalculator } from './_component/OvertimeBonusCalculator/OvertimeBonusCalculator';
+import { ScrapSoldCalculator } from './_component/ScrapSoldCalculater/ScrapSoldCalculator';
 
-export default function Index() {
+export default () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className='container mx-auto'>
@@ -20,7 +19,7 @@ export default function Index() {
             <OvertimeBonusCalculator />
           </TabPanel>
           <TabPanel>
-            <ScrapSoldCalculater />
+            <ScrapSoldCalculator />
           </TabPanel>
         </Tabs>
       </div>

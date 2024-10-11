@@ -3,7 +3,7 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import './styles/search.css';
 import 'react-tabs/style/react-tabs.css';
 
-export default function Index() {
+export default () => {
   const renderAbout = () => {
     return (
       <text>

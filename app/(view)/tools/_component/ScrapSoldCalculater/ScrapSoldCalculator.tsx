@@ -1,12 +1,7 @@
 import { Moon, moonPrice } from "@/app/models/moon";
 import { Equipment, Upgrade, merchandicePrice } from "@/app/models/store_item";
-import { Button, Checkbox, Input, Radio } from "@mui/material";
+import { Button, Checkbox, Radio } from "@mui/material";
 import { useState } from "react";
-
-interface props {
-  scrapSold2: number;
-  quotaAmount2: number;
-}
 
 type BuyItem = {
   name: Equipment | Upgrade;
@@ -14,11 +9,14 @@ type BuyItem = {
   count: number;
 }
 
-export default function ScrapSoldCalculater() {
+// TODO リファクタリング
+export const ScrapSoldCalculator = () => {
   const [targetMoney, setTargetMoney] = useState<number>(550);
   const [quotaAmount, setQuotaAmount] = useState<number>(130);
   const [moonSelected, setMoonSelected] = useState<Moon>("Free");
   const [boughtItems, setBoughtItems] = useState<BuyItem[]>([]);
+
+  const moonOptions: Moon[] = ["Free", "Rend", "Dine", "Titan", "Artifice", "Embrion"];
 
   const renderAbout = () => {
     return (
@@ -32,7 +30,7 @@ export default function ScrapSoldCalculater() {
     const id = "moons-" + moonName;
 
     return (
-      <span>
+      <>
         <Radio
           id={id}
           name='moons-radio'
@@ -44,7 +42,7 @@ export default function ScrapSoldCalculater() {
         >
           <text>{moonName}({moonPrice(moonName)})</text>
         </label>
-      </span>
+      </>
     )
   }
 
@@ -183,6 +181,8 @@ export default function ScrapSoldCalculater() {
         <details>
           <summary>Target Money Helper</summary>
           <div>
+            //TODO リファクタリング
+            {/* {moonOptions.map((option) => renderMoonRadio(option))} */}
             {renderMoonRadio("Free")}
             {renderMoonRadio("Rend")}
             {renderMoonRadio("Dine")}
@@ -217,7 +217,7 @@ export default function ScrapSoldCalculater() {
             variant="contained"
             onClick={() => setTargetMoney(calculateTargetMoney())}
           >
-            Culculate to Target Money
+            Calculate to Target Money
           </Button>
         </details>
       </div>
