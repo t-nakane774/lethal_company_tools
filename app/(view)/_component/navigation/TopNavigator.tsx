@@ -1,6 +1,6 @@
 import { IoIosSearch } from 'react-icons/io';
 import { FaTools } from "react-icons/fa";
-import logo from '../../../images/logo-with-crew.png'
+import logo from '../../../images/logo.png'
 import './styles/TopNavigator.css'
 
 export const TopNavigator = () => {
