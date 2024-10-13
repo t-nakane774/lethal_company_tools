@@ -11,12 +11,14 @@ type BuyItem = {
 
 // TODO リファクタリング
 export const ScrapSoldCalculator = () => {
-  const [targetMoney, setTargetMoney] = useState<number>(550);
+  const [targetMoney, setTargetMoney] = useState<number>(1500);
   const [quotaAmount, setQuotaAmount] = useState<number>(130);
   const [moonSelected, setMoonSelected] = useState<Moon>("Free");
   const [boughtItems, setBoughtItems] = useState<BuyItem[]>([]);
 
   const moonOptions: Moon[] = ["Free", "Rend", "Dine", "Titan", "Artifice", "Embrion"];
+  const equipmentOptions: Equipment[] = ["Walkie-talkie", "Flashlight", "Shovel", "Lockpicker", "Pro-flashlight", "Stun_grenade", "Boombox", "TZP-Inhalant", "Zap_gun", "Jetpack", "Extension_ladder", "Radar-booster", "Spray_paint", "Weed_killer", "Belt_bag", "Cruiser"];
+  const upgradeOptions: Upgrade[] = ["Loud_horn", "Signal_translator", "Teleporter", "Inverse_Teleporter"];
 
   const renderAbout = () => {
     return (
@@ -181,37 +183,15 @@ export const ScrapSoldCalculator = () => {
         <details>
           <summary>Target Money Helper</summary>
           <div>
-            //TODO リファクタリング
-            {/* {moonOptions.map((option) => renderMoonRadio(option))} */}
-            {renderMoonRadio("Free")}
-            {renderMoonRadio("Rend")}
-            {renderMoonRadio("Dine")}
-            {renderMoonRadio("Titan")}
-            {renderMoonRadio("Artifice")}
-            {renderMoonRadio("Embrion")}
+            {moonOptions.map((option) => renderMoonRadio(option))}
           </div>
           <div>
             <table>
-              {renderEquipmentTableRow("Walkie-talkie")}
-              {renderEquipmentTableRow("Flashlight")}
-              {renderEquipmentTableRow("Shovel")}
-              {renderEquipmentTableRow("Lockpicker")}
-              {renderEquipmentTableRow("Pro-flashlight")}
-              {renderEquipmentTableRow("Stun_grenade")}
-              {renderEquipmentTableRow("Boombox")}
-              {renderEquipmentTableRow("TZP-Inhalant")}
-              {renderEquipmentTableRow("Zap_gun")}
-              {renderEquipmentTableRow("Jetpack")}
-              {renderEquipmentTableRow("Extension_ladder")}
-              {renderEquipmentTableRow("Radar-booster")}
-              {renderEquipmentTableRow("Cruiser")}
+              {equipmentOptions.map((option) => renderEquipmentTableRow(option))}
             </table>
           </div>
           <div>
-            {renderUpgradeCheckbox("Loud_horn")}
-            {renderUpgradeCheckbox("Signal_translator")}
-            {renderUpgradeCheckbox("Teleporter")}
-            {renderUpgradeCheckbox("Inverse_Teleporter")}
+            {upgradeOptions.map((option) => renderUpgradeCheckbox(option))}
           </div>
           <Button
             variant="contained"
